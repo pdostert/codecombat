@@ -128,4 +128,4 @@ describe 'CourseVictoryModal', ->
           done()
         modal.session.fakeRequests[0]?.respondWith({ status: 200, responseText: '{}' })
 
-    it '(demo)', -> jasmine.demoModal(modal)
+    xit '(demo)', -> jasmine.demoModal(modal)
