@@ -76,6 +76,9 @@ module.exports = TestView = class TestView extends RootView
     jasmine.getEnv().addReporter({
       suiteStack: []
       
+      specStarted: (result) ->
+        console.log "Test started: ", result.fullName
+      
       specDone: (result) ->
         if result.status is 'failed'
           report = {
@@ -83,6 +86,7 @@ module.exports = TestView = class TestView extends RootView
             failMessages: (fe.message for fe in result.failedExpectations)
             testDescription: result.description
           }
+          console.log "Test failed: ", result.fullName, JSON.stringify(report, null, '  ')
           view?.failureReports.push(report)
           view?.renderSelectors('#failure-reports')
         
