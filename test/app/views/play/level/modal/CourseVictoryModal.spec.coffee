@@ -119,7 +119,7 @@ describe 'CourseVictoryModal', ->
       _.defer done
 
     describe 'its CourseVictoryModal', ->
-      it 'has a publish button which sets session.published to true', (done) ->
+      xit 'has a publish button which sets session.published to true', (done) ->
         spyOn(application.router, 'navigate')
         button = modal.$el.find('#publish-btn')
         expect(button.length).toBe(1)
