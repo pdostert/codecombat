@@ -479,7 +479,7 @@ module.exports = class CampaignView extends RootView
       return @promptForSubscription campaignSlug, 'premium campaign visited'
 
   promptForSignup: ->
-    return if features.noAuth
+    return if features.noAuth or @terrain is 'game-dev-hoc'
 
     @endHighlight()
     authModal = new CreateAccountModal supermodel: @supermodel
